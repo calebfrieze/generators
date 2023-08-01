@@ -1,0 +1,11 @@
+export const generate24HourArray = () => {
+  let hour = 0;
+  let minute = 0;
+  let index = 0;
+  const times: string[] = [];
+  do {
+    times.push(`${hour < 10 ? `0${hour}` : hour}:${minute !== 30 ? "00" : minute}`);
+    [hour, minute] = minute === 30 ? [hour + 1, 0] : [hour, 30];
+    index++;
+  } while (index !== 47);
+};
